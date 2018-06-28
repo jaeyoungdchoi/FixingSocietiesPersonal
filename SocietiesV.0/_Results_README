@@ -1,0 +1,29 @@
+README
+
+Longform of societies output is here! 
+
+1. The database structure for Societies output is two
+files: long_output.csv and UniqueKey.csv. The UniqueKey 
+is a system timestamp in nanoseconds that is passed to 
+Societies using the new -d parameter. This key is for one
+"batch" or configuration that has one or more runs
+associated with it.
+
+2. Societies prints all variables on one row per day and run
+to long_output.csv.
+
+3. It also prints the uniqueID to the UniqueKey.csv along
+with all of the parameters in the config file and from the
+command line. 
+
+4. The shellscript _Results.sh will concatenate all of the output files
+from the _Results subdirectories into one long file for each file in _Results/
+subdirectory named after the config name.
+
+Supplemental information:
+The runlog.csv contains all unique IDs, number of runs and when they 
+run, and elapsed time. This can be useful to select which batches to select from the 
+long_output file once it is in tableau or stata. 
+This file is appended to from within the run1.pbs script. 
+
+
